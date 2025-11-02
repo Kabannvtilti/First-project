@@ -1,0 +1,155 @@
+html,body { margin: 0;padding: 0; border: 0;outline: 0;  }
+body{
+    position: relative;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@400;500&display=swap');
+
+main{
+    
+    height: 2000px;
+   background-color: #070614;
+    
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+    
+
+.mindlix {
+    position: absolute;
+    z-index: 1;
+    font-size: 25px;
+    left: 150px;
+    color: aliceblue;
+    top: 30px;
+    font-family: 'Jacques Francois';
+    font-style: normal;
+    text-decoration: none;
+    display: flex;
+}
+
+.mindlix-img {
+  position: relative;
+  width: 100%;
+  height: 1300px;
+  opacity: 0;
+  animation: mindlixImg 1.5s ease-in forwards;
+  filter: brightness(65%);
+}
+
+@keyframes mindlixImg {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.split-line {
+z-index: 1;
+  position: absolute;
+  height: 1px;
+  width: 85%; 
+  margin: 80px auto;
+  background: none;
+  overflow: hidden;
+  left: 100px;
+}
+
+.split-line::before,.split-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #fbfbfb;
+  animation: expandFromCenter 1.5s ease-out forwards;
+}
+
+.split-line::before {
+  left: 50%;
+}
+
+.split-line::after {
+  right: 50%;
+}
+
+@keyframes expandFromCenter {
+  to {
+    width: 50%;
+  }
+}
+
+.center-content {
+  position: absolute;
+  top: 1600px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: aliceblue;
+  z-index: 2;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+.site-title {
+  font-family: 'Jacques Francois', serif;
+  font-size: 45px;
+  margin-bottom: 10px;
+  bottom: 20px;
+  position: relative;
+  width: 1000px;
+}
+
+.site-subtitle {
+  font-size: 23px;
+  color: #cccccc;
+  margin-bottom: 25px;
+  position: relative;
+  bottom: 20px;
+  width: 600px;
+  left: 200px;
+  font-family: 'Cinzel', serif;
+}
+
+.register-btn {
+  display: inline-block; /* потрібно, щоб працював transform */
+  background-color: #ffc600;
+  color: #000;
+  font-size: 20px;
+  padding: 15px 40px;
+  border-radius: 10px;
+  text-decoration: none; /* прибирає підкреслення */
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background-color: #ffd633 !important;
+  transform: scale(1.1) !important; /* збільшується при наведенні */
+  box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4); /* додатковий ефект */
+}
+
+.register-btn:active {
+  transform: scale(0.97) !important; /* легке зменшення при натисканні */
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.fade-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
